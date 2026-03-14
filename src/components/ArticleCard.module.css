@@ -1,0 +1,76 @@
+/* src/components/ArticleCard.module.css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover {
+  opacity: 0.85;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.02);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.featured .title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.dek {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+}
+
+.date::before {
+  content: '— ';
+}

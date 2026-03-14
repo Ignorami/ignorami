@@ -1,0 +1,72 @@
+/* src/components/Navbar.module.css */
+
+.header {
+  border-bottom: 2px solid var(--color-text);
+  padding: 2rem 1.5rem 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dateline {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.tagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.wordmark:hover {
+  opacity: 0.7;
+}
+
+.nav {
+  padding: 0.6rem 0;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav ul li a {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color 0.15s ease;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav ul li a:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
+}
