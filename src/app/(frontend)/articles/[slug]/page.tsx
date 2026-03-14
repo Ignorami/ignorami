@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import styles from './page.module.css'
 
+import type { Article, Category, Author, Media } from '@/payload-types'
+import type { ResolvedArticle } from '@/types/resolved'
+
 type Props = {
   params: Promise<{ slug: string }>
 }
@@ -24,7 +27,7 @@ export default async function ArticlePage({ params }: Props) {
     limit: 1,
   })
 
-  const article = docs[0]
+  const article = docs[0] as ResolvedArticle
   if (!article) notFound()
 
   const { title, dek, content, author, category, coverImage, publishedAt } = article
