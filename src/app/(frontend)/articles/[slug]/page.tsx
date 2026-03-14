@@ -7,16 +7,17 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import styles from './page.module.css'
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export default async function ArticlePage({ params }: Props) {
   const payload = await getPayloadClient()
+  const { slug } = await params
 
   const { docs } = await payload.find({
     collection: 'articles',
     where: {
-      slug: { equals: params.slug },
+      slug: { equals: slug },
       status: { equals: 'published' },
     },
     depth: 2,
