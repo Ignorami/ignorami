@@ -100,12 +100,13 @@ export default async function ArticlePage({ params }: Props) {
 
 export async function generateMetadata({ params }: Props) {
   const payload = await getPayloadClient()
+  const { slug } = await params
   const { docs } = await payload.find({
     collection: 'articles',
-    where: { slug: { equals: params.slug } },
+    where: { slug: { equals: slug } },
     limit: 1,
   })
-  const article = docs[0]
+  const article = docs[0] as ResolvedArticle
   if (!article) return {}
 
   return {
