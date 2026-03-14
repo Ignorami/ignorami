@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import { Playfair_Display, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -28,9 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <main>{children}</main>
-        <footer className="site-footer">
-          <p>© {new Date().getFullYear()} Ignorami. All rights reserved, apparently.</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   )
