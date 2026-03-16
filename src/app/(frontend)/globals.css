@@ -1,15 +1,10 @@
-/* src/app/(frontend)/globals.css */
-
 :root {
-  --color-bg: #faf9f7;
-  --color-text: #1a1a1a;
-  --color-muted: #6b6b6b;
-  --color-accent: #c0392b;
-  --color-border: #e0ddd8;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Libre Baskerville', Georgia, serif;
-  --max-width: 1100px;
-  --column-gap: 2rem;
+  --color-bg: #e8f0e8; /* more pronounced green tint */
+  --color-text: #162318; /* very deep forest green-black */
+  --color-muted: #4a6b54;
+  --color-accent: #2d4a3e;
+  --color-accent-light: #3d6b57;
+  --color-border: #a8c4a8;
 }
 
 *,

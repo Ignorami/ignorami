@@ -23,6 +23,7 @@
 .image {
   object-fit: cover;
   transition: transform 0.4s ease;
+  filter: saturate(0.9);
 }
 
 .imageWrap:hover .image {

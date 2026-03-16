@@ -9,6 +9,8 @@ import styles from './page.module.css'
 import type { Article, Category, Author, Media } from '@/payload-types'
 import type { ResolvedArticle } from '@/types/resolved'
 
+export const revalidate = 60
+
 type Props = {
   params: Promise<{ slug: string }>
 }
