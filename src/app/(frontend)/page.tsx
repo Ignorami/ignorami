@@ -3,6 +3,8 @@ import { getPayloadClient } from '@/lib/payload'
 import { ArticleCard } from '@/components/ArticleCard'
 import styles from './page.module.css'
 
+export const revalidate = 60
+
 export default async function HomePage() {
   const payload = await getPayloadClient()
 
