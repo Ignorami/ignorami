@@ -1,5 +1,5 @@
-// src/components/Navbar.tsx
 import Link from 'next/link'
+import { Box, Container, Group, Text, Anchor } from '@mantine/core'
 import { getPayloadClient } from '@/lib/payload'
 import styles from './Navbar.module.css'
 
@@ -11,30 +11,39 @@ export async function Navbar() {
   })
 
   return (
-    <header className={styles.header}>
-      <div className={styles.top}>
-        <div className={styles.dateline}>
-          {new Date().toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </div>
-        <Link href="/" className={styles.wordmark}>
-          Ignorami
-        </Link>
-        <div className={styles.tagline}>Tagline Goes Here</div>
-      </div>
-      <nav className={styles.nav}>
-        <ul>
-          {categories.map((cat: any) => (
-            <li key={cat.id}>
-              <Link href={`/category/${cat.slug}`}>{cat.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    <Box component="header" className={styles.header}>
+      <Container size={1100}>
+        <Group className={styles.top} justify="space-between" align="center">
+          <Text className={styles.dateline} component="span">
+            {new Date().toLocaleDateString('en-US', {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </Text>
+          <Anchor component={Link} href="/" className={styles.wordmark}>
+            Ignorami
+          </Anchor>
+          <Text className={styles.tagline} component="span">
+            Journalism, But Worse.
+          </Text>
+        </Group>
+        <Box component="nav" className={styles.nav}>
+          <Group justify="center" gap="xl">
+            {categories.map((cat: any) => (
+              <Anchor
+                key={cat.id}
+                component={Link}
+                href={`/category/${cat.slug}`}
+                className={styles.navLink}
+              >
+                {cat.name}
+              </Anchor>
+            ))}
+          </Group>
+        </Box>
+      </Container>
+    </Box>
   )
 }

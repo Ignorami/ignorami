@@ -1,0 +1,96 @@
+/* src/app/(frontend)/about/page.module.css */
+
+.header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section {
+  font-size: 0.68rem !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent) !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+.title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1 !important;
+  margin: 0;
+}
+
+.body {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.contact {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.contactTitle {
+  font-family: var(--font-display) !important;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem !important;
+}
+
+.contactText {
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+  margin-bottom: 2rem !important;
+}
+
+.contactLink {
+  color: var(--color-accent) !important;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none !important;
+  transition: border-color 0.15s ease;
+}
+
+.contactLink:hover {
+  border-bottom-color: var(--color-accent) !important;
+}
+
+.support {
+  background-color: var(--color-accent);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.supportText {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  flex: 1;
+}
+
+.coffeeButton {
+  display: inline-block;
+  background-color: #f5efe0;
+  color: var(--color-accent) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease;
+}
+
+.coffeeButton:hover {
+  background-color: #ffffff;
+}

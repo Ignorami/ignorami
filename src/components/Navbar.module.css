@@ -1,20 +1,27 @@
-.nav ul li a:hover {
-  color: #ffffff;
-  border-bottom-color: #ffffff;
+.header {
+  background-color: #2d4a3e;
+  padding: 2rem 1.5rem 0;
+}
+
+.top {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .dateline {
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
 }
 
 .tagline {
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
   text-align: right;
 }
 
@@ -23,9 +30,11 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: #f5efe0 !important;
   text-align: center;
   line-height: 1;
   transition: opacity 0.2s ease;
+  text-decoration: none !important;
 }
 
 .wordmark:hover {
@@ -36,63 +45,20 @@
   padding: 0.6rem 0;
 }
 
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav ul li a {
+.navLink {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-muted);
-  transition: color 0.15s ease;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-decoration: none !important;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
-.nav ul li a:hover {
-  color: var(--color-text);
-  border-bottom-color: var(--color-text);
-}
-
-.header {
-  background-color: #2d4a3e;
-  border-bottom: none;
-  padding: 2rem 1.5rem 0;
-  max-width: 100%; /* let it bleed full width */
-}
-
-.top {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  /* padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
-}
-
-.wordmark {
-  color: #f0f4f0;
-}
-
-.dateline,
-.tagline {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0.6rem 0;
-}
-
-.nav ul li a {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.nav ul li a:hover {
-  color: #ffffff;
+.navLink:hover {
+  color: #ffffff !important;
   border-bottom-color: #ffffff;
 }

@@ -18,6 +18,8 @@
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
   },
   "dependencies": {
+    "@mantine/core": "^8.3.17",
+    "@mantine/hooks": "^8.3.17",
     "@payloadcms/db-postgres": "3.79.0",
     "@payloadcms/next": "3.79.0",
     "@payloadcms/richtext-lexical": "3.79.0",
@@ -42,6 +44,9 @@
     "eslint": "^9.16.0",
     "eslint-config-next": "15.4.11",
     "jsdom": "28.0.0",
+    "postcss": "^8.5.8",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.4.2",
     "tsx": "4.21.0",
     "typescript": "5.7.3",

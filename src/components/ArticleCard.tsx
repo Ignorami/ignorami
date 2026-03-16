@@ -1,10 +1,11 @@
-// src/components/ArticleCard.tsx
 import Link from 'next/link'
 import Image from 'next/image'
+import { Box, Text, Anchor, Group } from '@mantine/core'
 import styles from './ArticleCard.module.css'
+import type { ResolvedArticle } from '@/types/resolved'
 
 type Props = {
-  article: any
+  article: ResolvedArticle
   featured?: boolean
 }
 
@@ -12,35 +13,41 @@ export function ArticleCard({ article, featured = false }: Props) {
   const { title, dek, slug, author, category, coverImage, publishedAt } = article
 
   return (
-    <article className={`${styles.card} ${featured ? styles.featured : ''}`}>
+    <Box component="article" className={`${styles.card} ${featured ? styles.featured : ''}`}>
       {coverImage?.url && (
         <Link href={`/articles/${slug}`} className={styles.imageWrap}>
           <Image src={coverImage.url} alt={coverImage.alt || title} fill className={styles.image} />
         </Link>
       )}
-      <div className={styles.body}>
-        {category?.name && (
-          <Link href={`/category/${category.slug}`} className={styles.category}>
+      <Box className={styles.body}>
+        {category && (
+          <Anchor component={Link} href={`/category/${category.slug}`} className={styles.category}>
             {category.name}
-          </Link>
+          </Anchor>
         )}
-        <Link href={`/articles/${slug}`}>
-          <h2 className={styles.title}>{title}</h2>
-        </Link>
-        {dek && <p className={styles.dek}>{dek}</p>}
-        <div className={styles.meta}>
-          {author?.name && <span>By {author.name}</span>}
+        <Anchor component={Link} href={`/articles/${slug}`} className={styles.titleLink}>
+          <Text component="h2" className={styles.title}>
+            {title}
+          </Text>
+        </Anchor>
+        {dek && <Text className={styles.dek}>{dek}</Text>}
+        <Group gap="md" className={styles.meta}>
+          {author?.name && (
+            <Text component="span" className={styles.metaItem}>
+              By {author.name}
+            </Text>
+          )}
           {publishedAt && (
-            <span className={styles.date}>
+            <Text component="time" className={styles.metaItem}>
               {new Date(publishedAt).toLocaleDateString('en-US', {
                 month: 'long',
                 day: 'numeric',
                 year: 'numeric',
               })}
-            </span>
+            </Text>
           )}
-        </div>
-      </div>
-    </article>
+        </Group>
+      </Box>
+    </Box>
   )
 }
