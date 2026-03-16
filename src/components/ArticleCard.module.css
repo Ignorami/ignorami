@@ -3,8 +3,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--color-border);
-  padding-top: 1.5rem;
+  /* border-top: 1px solid var(--color-border); */
+  /* padding-top: 1.5rem; */
   transition: opacity 0.2s ease;
 }
 
