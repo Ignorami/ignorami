@@ -10,6 +10,7 @@ import { Media } from './collections/Media'
 import { Categories } from '@/collections/Categories'
 import { Authors } from '@/collections/Authors'
 import { Articles } from '@/collections/Articles'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -33,5 +34,13 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [],
+  plugins: [
+    vercelBlobStorage({
+      enabled: true,
+      collections: {
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+    }),
+  ],
 })
