@@ -19,13 +19,14 @@
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  max-height: 300px;
+  height: 300px;
   overflow: hidden;
   margin-bottom: 1rem;
 }
-
 .image {
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.4s ease;
   filter: saturate(0.9);
 }
