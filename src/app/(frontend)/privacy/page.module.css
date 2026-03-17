@@ -1,0 +1,37 @@
+.header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eyebrow {
+  font-size: 0.68rem !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent) !important;
+  font-weight: 700 !important;
+}
+
+.title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1 !important;
+  margin: 0;
+}
+
+.date {
+  font-size: 0.75rem !important;
+  color: var(--color-muted) !important;
+  font-style: italic;
+  margin-top: 0.25rem !important;
+}
+
+.body {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}

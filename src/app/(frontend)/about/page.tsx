@@ -51,7 +51,7 @@ export default function AboutPage() {
           </Text>
           <Anchor
             component={Link}
-            href="https://buymeacoffee.com"
+            href="https://buymeacoffee.com/ignorami"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.coffeeButton}

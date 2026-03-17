@@ -12,11 +12,8 @@ export function Footer() {
             <Anchor component={Link} href="/about" className={styles.navLink}>
               About
             </Anchor>
-            <Anchor component={Link} href="/contact" className={styles.navLink}>
+            <Anchor component={Link} href="mailto:hello@ignorami.com" className={styles.navLink}>
               Contact
-            </Anchor>
-            <Anchor component={Link} href="/advertise" className={styles.navLink}>
-              Advertise
             </Anchor>
             <Anchor component={Link} href="/privacy" className={styles.navLink}>
               Privacy Policy
