@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'About | Ignorami',
-  description: 'About Ignorami.',
+  description: 'A team of scholars, experts, visionaries, and earthshakers. Actually just one guy.',
 }
 
 export default function AboutPage() {
@@ -22,14 +22,14 @@ export default function AboutPage() {
           We are a team of scholars, experts, visionaries, and earthshakers dedicated to bringing
           you hard-hitting stories, timely journalism, and thought-provoking opinions. We cover
           politics, culture, science, and everything in between, and our experts are here to help
-          you understand it all because you probably wouldn't get it otherwise.
+          you understand it all because you probably wouldn&apos;t get it otherwise.
         </p>
-        <Divider />
+        <Divider my="xl" />
         <p>
           Now, all of those experts are actually just me: the founder, editor-in-chief,
-          ignoramus-in-chief, and sole writer of Ignorami. I hope that the name "Ignorami (pl.,
-          ignoramus)" conveys that these are all satire, and should not be taken seriously. I also
-          hope that I can help you smile at least once. :)
+          ignoramus-in-chief, and sole writer of Ignorami. I hope that the name &ldquo;Ignorami
+          (pl., ignoramus)&rdquo; conveys that these are all satire, and should not be taken
+          seriously. I also hope that I can help you smile at least once. :)
         </p>
       </Box>
 
@@ -39,8 +39,8 @@ export default function AboutPage() {
         </Text>
         <Text className={styles.contactText}>
           Tips, complaints, unsolicited opinions, and cease-and-desist letters can be directed to{' '}
-          <Anchor href="mailto:hello@ignorami.com" className={styles.contactLink}>
-            hello@ignorami.com
+          <Anchor href="mailto:helloignorami@gmail.com" className={styles.contactLink}>
+            helloignorami@gmail.com
           </Anchor>
           .
         </Text>

@@ -1,11 +1,128 @@
 .header {
   background-color: #2d4a3e;
-  padding: 2rem 1.5rem 0;
+  padding: 1.25rem 1.5rem 0;
+  position: relative;
 }
 
-.top {
+/* ── Desktop ── */
+
+.topDesktop {
+  display: none;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 768px) {
+  .topDesktop {
+    display: flex;
+  }
+}
+
+.navDesktop {
+  display: none;
+  padding: 0.6rem 0;
+}
+
+@media (min-width: 768px) {
+  .navDesktop {
+    display: block;
+  }
+}
+
+/* ── Mobile ── */
+
+.topMobile {
+  display: flex;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 768px) {
+  .topMobile {
+    display: none;
+  }
+}
+
+.mobileTagline {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .mobileTagline {
+    display: none;
+  }
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #2d4a3e;
+  z-index: 100;
+  padding: 0 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navMobileOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  padding: 0.5rem 1.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .navMobile {
+    display: none !important;
+  }
+}
+
+.mobileNavLink {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none !important;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.15s ease;
+  display: block;
+}
+
+.mobileNavLink:hover {
+  color: #ffffff !important;
+}
+
+/* ── Shared ── */
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f5efe0 !important;
+  text-align: center;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+  text-decoration: none !important;
+}
+
+.wordmark:hover {
+  opacity: 0.7;
 }
 
 .dateline {
@@ -25,24 +142,9 @@
   text-align: right;
 }
 
-.wordmark {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #f5efe0 !important;
+.mobileTagline .tagline {
   text-align: center;
-  line-height: 1;
-  transition: opacity 0.2s ease;
-  text-decoration: none !important;
-}
-
-.wordmark:hover {
-  opacity: 0.7;
-}
-
-.nav {
-  padding: 0.6rem 0;
+  flex: unset;
 }
 
 .navLink {
