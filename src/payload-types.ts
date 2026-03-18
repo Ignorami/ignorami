@@ -247,6 +247,10 @@ export interface Article {
   author: number | Author;
   category: number | Category;
   coverImage?: (number | null) | Media;
+  /**
+   * The type of content this article represents.
+   */
+  contentType: 'article' | 'short-form';
   content: {
     root: {
       type: string;
@@ -475,6 +479,7 @@ export interface ArticlesSelect<T extends boolean = true> {
   author?: T;
   category?: T;
   coverImage?: T;
+  contentType?: T;
   content?: T;
   tags?:
     | T

@@ -54,6 +54,20 @@ export const Articles: CollectionConfig = {
       relationTo: 'media',
     },
     {
+      name: 'contentType',
+      type: 'select',
+      options: [
+        { label: 'Article', value: 'article' },
+        { label: 'Short Form', value: 'short-form' },
+      ],
+      defaultValue: 'article',
+      required: true,
+      admin: {
+        description: 'The type of content this article represents.',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'content',
       type: 'richText',
       required: true,

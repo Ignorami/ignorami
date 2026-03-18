@@ -6,7 +6,7 @@ export type ResolvedArticle = Article & {
     avatar: Media
   }
   coverImage: Media
-  contentType: 'satire' | 'opinion' | 'short-form'
+  contentType: 'article' | 'short-form'
   seo?: Article['seo'] & {
     ogImage: Media
   }

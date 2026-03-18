@@ -1,0 +1,21 @@
+.badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+.opinion {
+  background-color: #2d4a3e;
+  color: #f5efe0;
+}
+
+.short_form {
+  background-color: #f5efe0;
+  color: #2d4a3e;
+  border: 1px solid #2d4a3e;
+}

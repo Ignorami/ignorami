@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Box, Text, Anchor, Group } from '@mantine/core'
 import styles from './ArticleCard.module.css'
 import type { ResolvedArticle } from '@/types/resolved'
+import { ContentTypeBadge } from './ContentTypeBadge'
 
 type Props = {
   article: ResolvedArticle
@@ -20,6 +21,9 @@ export function ArticleCard({ article, featured = false }: Props) {
         </Link>
       )}
       <Box className={styles.body}>
+        {article.contentType && article.contentType !== 'satire' && (
+          <ContentTypeBadge contentType={article.contentType} />
+        )}
         {category && (
           <Anchor component={Link} href={`/category/${category.slug}`} className={styles.category}>
             {category.name}

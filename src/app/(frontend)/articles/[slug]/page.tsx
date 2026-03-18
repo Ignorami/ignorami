@@ -6,6 +6,7 @@ import { Container, Box, Text, Anchor, Group } from '@mantine/core'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import type { ResolvedArticle } from '@/types/resolved'
 import styles from './page.module.css'
+import { ContentTypeBadge } from '@/components/ContentTypeBadge'
 
 export const revalidate = 60
 
@@ -36,6 +37,9 @@ export default async function ArticlePage({ params }: Props) {
     <Container size={720} py="xl">
       <Box component="article">
         <Box component="header" className={styles.header}>
+          {article.contentType && article.contentType !== 'satire' && (
+            <ContentTypeBadge contentType={article.contentType} />
+          )}
           {category && (
             <Anchor
               component={Link}
