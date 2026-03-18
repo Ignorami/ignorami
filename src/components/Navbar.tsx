@@ -1,4 +1,4 @@
-import { Box, Container } from '@mantine/core'
+import { Box } from '@mantine/core'
 import { getPayloadClient } from '@/lib/payload'
 import { NavbarClient } from './NavbarClient'
 

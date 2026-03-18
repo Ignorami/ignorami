@@ -6,7 +6,7 @@ import { Box, Container, Group, Text, Anchor, Burger } from '@mantine/core'
 import styles from './Navbar.module.css'
 
 type Category = {
-  id: string
+  id: number
   name: string
   slug: string
 }
