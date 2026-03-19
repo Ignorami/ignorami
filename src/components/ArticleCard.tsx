@@ -21,9 +21,7 @@ export function ArticleCard({ article, featured = false }: Props) {
         </Link>
       )}
       <Box className={styles.body}>
-        {article.contentType && article.contentType !== 'satire' && (
-          <ContentTypeBadge contentType={article.contentType} />
-        )}
+        {article.contentType && <ContentTypeBadge contentType={article.contentType} />}
         {category && (
           <Anchor component={Link} href={`/category/${category.slug}`} className={styles.category}>
             {category.name}
