@@ -37,9 +37,7 @@ export default async function ArticlePage({ params }: Props) {
     <Container size={720} py="xl">
       <Box component="article">
         <Box component="header" className={styles.header}>
-          {article.contentType && article.contentType !== 'satire' && (
-            <ContentTypeBadge contentType={article.contentType} />
-          )}
+          {article.contentType && <ContentTypeBadge contentType={article.contentType} />}
           {category && (
             <Anchor
               component={Link}

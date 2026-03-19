@@ -23,6 +23,27 @@ const baskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   title: 'Ignorami',
   description: 'News for people who are paying attention.',
+  openGraph: {
+    title: 'Ignorami',
+    description: 'Journalism, but worse.',
+    url: 'https://ignorami.com',
+    siteName: 'Ignorami',
+    images: [
+      {
+        url: 'https://ignorami.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ignorami',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ignorami',
+    description: 'Journalism, but worse.',
+    images: ['https://ignorami.com/og-image.png'],
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
