@@ -53,13 +53,3 @@ img {
   font-style: italic;
   margin: 2rem 0;
 }
-
-.article-body p:first-child::first-letter {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 700;
-  float: left;
-  line-height: 0.85;
-  margin-right: 0.1em;
-  color: var(--color-accent);
-}
