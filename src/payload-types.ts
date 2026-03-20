@@ -245,6 +245,10 @@ export interface Article {
    */
   slug: string;
   author: number | Author;
+  /**
+   * Pin this article to the top of the homepage.
+   */
+  featured?: boolean | null;
   category: number | Category;
   coverImage?: (number | null) | Media;
   /**
@@ -477,6 +481,7 @@ export interface ArticlesSelect<T extends boolean = true> {
   dek?: T;
   slug?: T;
   author?: T;
+  featured?: T;
   category?: T;
   coverImage?: T;
   contentType?: T;
