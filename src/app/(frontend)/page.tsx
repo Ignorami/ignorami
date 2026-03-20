@@ -17,7 +17,9 @@ export default async function HomePage() {
     depth: 2,
   })
 
-  const [featured, ...rest] = articles as ResolvedArticle[]
+  const featured =
+    (articles as ResolvedArticle[]).find((a) => a.featured) ?? (articles[0] as ResolvedArticle)
+  const rest = (articles as ResolvedArticle[]).filter((a) => a.id !== featured.id)
 
   return (
     <Container size={1100} py="xl">
