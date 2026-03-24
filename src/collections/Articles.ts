@@ -43,6 +43,15 @@ export const Articles: CollectionConfig = {
       required: true,
     },
     {
+      name: 'featured',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Pin this article to the top of the homepage.',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'category',
       type: 'relationship',
       relationTo: 'categories',
