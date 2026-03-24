@@ -99,3 +99,9 @@
   color: var(--color-muted) !important;
   font-style: italic;
 }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
