@@ -2,8 +2,15 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
 export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
-    CREATE TYPE IF NOT EXISTS "public"."enum_articles_status" AS ENUM('draft', 'published');
-    CREATE TYPE IF NOT EXISTS "public"."enum__articles_v_version_status" AS ENUM('draft', 'published');
+    DO $$ BEGIN
+      CREATE TYPE "public"."enum_articles_status" AS ENUM('draft', 'published');
+    EXCEPTION WHEN duplicate_object THEN null;
+    END $$;
+
+    DO $$ BEGIN
+      CREATE TYPE "public"."enum__articles_v_version_status" AS ENUM('draft', 'published');
+    EXCEPTION WHEN duplicate_object THEN null;
+    END $$;
 
     CREATE TABLE IF NOT EXISTS "users_sessions" (
       "_order" integer NOT NULL,
