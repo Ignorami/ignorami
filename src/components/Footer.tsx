@@ -12,11 +12,16 @@ export function Footer() {
             <Anchor component={Link} href="/about" className={styles.navLink}>
               About
             </Anchor>
-            <Anchor component={Link} href="mailto:hello@ignorami.com" className={styles.navLink}>
-              Contact
-            </Anchor>
             <Anchor component={Link} href="/privacy" className={styles.navLink}>
               Privacy Policy
+            </Anchor>
+            <Anchor
+              href="https://buymeacoffee.com/ignorami"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.navLink}
+            >
+              ☕ Buy Me a Coffee
             </Anchor>
           </Group>
           <Text className={styles.copy}>
