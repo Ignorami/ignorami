@@ -14,7 +14,7 @@ export default function PrivacyPage() {
         <Text component="h1" className={styles.title}>
           Privacy Policy
         </Text>
-        <Text className={styles.date}>Last updated: March 17, 2026</Text>
+        <Text className={styles.date}>Last updated: March 27, 2026</Text>
       </Box>
 
       <Box className={`article-body ${styles.body}`}>
@@ -66,6 +66,19 @@ export default function PrivacyPage() {
             rel="noopener noreferrer"
           >
             buymeacoffee.com/privacy-policy
+          </a>
+          .
+        </p>
+        <p>
+          <strong>Google AdSense</strong> — Ignorami displays advertisements served by Google
+          AdSense. Google uses cookies to serve ads based on your prior visits to this website and
+          other sites. You may opt out of personalized advertising by visiting{' '}
+          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
+            Google Ads Settings
+          </a>
+          . For more information, see{' '}
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            Google&apos;s Privacy Policy
           </a>
           .
         </p>
