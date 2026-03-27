@@ -56,7 +56,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${baskerville.variable}`}>
-      <head>{/* <ColorSchemeScript /> */}</head>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8146019382037486"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body>
         <MantineProvider theme={theme} forceColorScheme="light">
           <Navbar />
