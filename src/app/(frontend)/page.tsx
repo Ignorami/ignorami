@@ -1,38 +1,26 @@
-import { getPayloadClient } from '@/lib/payload'
-import { ArticleCard } from '@/components/ArticleCard'
-import { Container, Box, SimpleGrid } from '@mantine/core'
-import type { ResolvedArticle } from '@/types/resolved'
-import styles from './page.module.css'
+// src/app/(frontend)/page.tsx
+import { Container } from '@mantine/core'
+import { ArticleGrid } from '@/components/ArticleGrid'
+import { getArticles, getFeaturedArticle } from '@/lib/getArticles'
 
 export const revalidate = 60
 
 export default async function HomePage() {
-  const payload = await getPayloadClient()
+  const [{ articles, totalPages }, featured] = await Promise.all([
+    getArticles(1),
+    getFeaturedArticle(),
+  ])
 
-  const { docs: articles } = await payload.find({
-    collection: 'articles',
-    where: { status: { equals: 'published' } },
-    sort: '-publishedAt',
-    limit: 10,
-    depth: 2,
-  })
-
-  const featured =
-    (articles as ResolvedArticle[]).find((a) => a.featured) ?? (articles[0] as ResolvedArticle)
-  const rest = (articles as ResolvedArticle[]).filter((a) => a.id !== featured.id)
+  const rest = featured ? articles.filter((a) => a.id !== featured.id) : articles
 
   return (
     <Container size={1100} py="xl">
-      {featured && (
-        <Box className={styles.featured}>
-          <ArticleCard article={featured} featured />
-        </Box>
-      )}
-      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl">
-        {rest.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
-      </SimpleGrid>
+      <ArticleGrid
+        articles={rest}
+        featured={featured ?? articles[0]}
+        currentPage={1}
+        totalPages={totalPages}
+      />
     </Container>
   )
 }
