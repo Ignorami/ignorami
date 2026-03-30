@@ -6,7 +6,7 @@ export async function Navbar() {
   const payload = await getPayloadClient()
   const { docs: categories } = await payload.find({
     collection: 'categories',
-    limit: 8,
+    limit: 12,
   })
 
   return (
