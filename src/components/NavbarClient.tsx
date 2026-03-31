@@ -1,6 +1,7 @@
+// src/components/NavbarClient.tsx
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { Box, Container, Group, Text, Anchor, Burger } from '@mantine/core'
 import styles from './Navbar.module.css'
@@ -15,8 +16,26 @@ type Props = {
   categories: Category[]
 }
 
+const PRIMARY_COUNT = 6
+
 export function NavbarClient({ categories }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const moreRef = useRef<HTMLDivElement>(null)
+
+  const primaryCategories = categories.slice(0, PRIMARY_COUNT)
+  const moreCategories = categories.slice(PRIMARY_COUNT)
+
+  // Close more dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <Box className={styles.header}>
@@ -50,7 +69,7 @@ export function NavbarClient({ categories }: Props) {
           <Anchor component={Link} href="/" className={styles.wordmark}>
             Ignorami
           </Anchor>
-          <Box style={{ width: 30 }} /> {/* spacer to center wordmark */}
+          <Box style={{ width: 30 }} />
         </Group>
 
         {/* Mobile tagline */}
@@ -63,7 +82,7 @@ export function NavbarClient({ categories }: Props) {
         {/* Desktop nav */}
         <Box component="nav" className={styles.navDesktop}>
           <Group justify="center" gap="xl">
-            {categories.map((cat) => (
+            {primaryCategories.map((cat) => (
               <Anchor
                 key={cat.id}
                 component={Link}
@@ -73,10 +92,36 @@ export function NavbarClient({ categories }: Props) {
                 {cat.name}
               </Anchor>
             ))}
+            {moreCategories.length > 0 && (
+              <Box className={styles.moreWrapper} ref={moreRef}>
+                <button
+                  className={styles.moreButton}
+                  onClick={() => setMoreOpen((o) => !o)}
+                  aria-expanded={moreOpen}
+                >
+                  More {moreOpen ? '▴' : '▾'}
+                </button>
+                <Box
+                  className={`${styles.moreDropdown} ${moreOpen ? styles.moreDropdownOpen : ''}`}
+                >
+                  {moreCategories.map((cat) => (
+                    <Anchor
+                      key={cat.id}
+                      component={Link}
+                      href={`/category/${cat.slug}`}
+                      className={styles.moreLink}
+                      onClick={() => setMoreOpen(false)}
+                    >
+                      {cat.name}
+                    </Anchor>
+                  ))}
+                </Box>
+              </Box>
+            )}
           </Group>
         </Box>
 
-        {/* Mobile dropdown */}
+        {/* Mobile dropdown — shows all categories */}
         <Box
           component="nav"
           className={`${styles.navMobile} ${menuOpen ? styles.navMobileOpen : ''}`}
