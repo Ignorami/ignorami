@@ -167,6 +167,8 @@
 
 .moreWrapper {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .moreButton {
@@ -193,9 +195,9 @@
 
 .moreDropdown {
   position: absolute;
-  top: calc(100% + 0.6rem);
+  top: calc(100% + 0.7rem);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-6px);
   background-color: #2d4a3e;
   min-width: 180px;
   z-index: 100;
@@ -203,12 +205,10 @@
   display: flex;
   flex-direction: column;
   opacity: 0;
-  translatey: -6px;
   pointer-events: none;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
-  transform: translateX(-50%) translateY(-6px);
 }
 
 .moreDropdownOpen {
