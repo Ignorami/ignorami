@@ -21,12 +21,20 @@ export function ArticleCard({ article, featured = false }: Props) {
         </Link>
       )}
       <Box className={styles.body}>
-        {article.contentType && <ContentTypeBadge contentType={article.contentType} />}
-        {category && (
-          <Anchor component={Link} href={`/category/${category.slug}`} className={styles.category}>
-            {category.name}
-          </Anchor>
-        )}
+        <Box className={styles.eyebrow}>
+          {article.contentType && article.contentType !== 'article' && (
+            <ContentTypeBadge contentType={article.contentType} />
+          )}
+          {category && (
+            <Anchor
+              component={Link}
+              href={`/category/${category.slug}`}
+              className={styles.category}
+            >
+              {category.name}
+            </Anchor>
+          )}
+        </Box>
         <Anchor component={Link} href={`/articles/${slug}`} className={styles.titleLink}>
           <Text component="h2" className={styles.title}>
             {title}
