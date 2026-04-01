@@ -7,6 +7,7 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import type { ResolvedArticle } from '@/types/resolved'
 import styles from './page.module.css'
 import { ContentTypeBadge } from '@/components/ContentTypeBadge'
+import { ShareButtons } from '@/components/ShareButtons'
 
 export const revalidate = 60
 
@@ -96,6 +97,8 @@ export default async function ArticlePage({ params }: Props) {
         <Box className="article-body">
           <RichText data={content} />
         </Box>
+
+        <ShareButtons url={`https://ignorami.com/articles/${article.slug}`} title={article.title} />
 
         {author && (
           <Box component="footer" className={styles.authorBox}>
