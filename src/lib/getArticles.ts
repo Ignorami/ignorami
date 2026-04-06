@@ -8,7 +8,7 @@ export async function getArticles(page: number = 1) {
 
   const { docs, totalDocs } = await payload.find({
     collection: 'articles',
-    where: { status: { equals: 'published' } },
+    where: { status: { equals: 'published' }, contentType: { equals: 'article' } },
     sort: '-publishedAt',
     limit: ARTICLES_PER_PAGE,
     page,
@@ -35,4 +35,21 @@ export async function getFeaturedArticle() {
   })
 
   return (docs[0] as ResolvedArticle) ?? null
+}
+
+export async function getShortFormArticles(limit: number = 5) {
+  const payload = await getPayloadClient()
+
+  const { docs } = await payload.find({
+    collection: 'articles',
+    where: {
+      status: { equals: 'published' },
+      contentType: { equals: 'short-form' },
+    },
+    sort: '-publishedAt',
+    depth: 2,
+    limit,
+  })
+
+  return docs as ResolvedArticle[]
 }
