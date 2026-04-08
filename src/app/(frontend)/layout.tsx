@@ -23,6 +23,10 @@ const baskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   title: 'Ignorami',
   description: 'News for people who are paying attention.',
+  metadataBase: new URL('https://ignorami.com'),
+  alternates: {
+    canonical: 'https://ignorami.com',
+  },
   openGraph: {
     title: 'Ignorami',
     description: 'Journalism, but worse.',
