@@ -42,11 +42,8 @@ export async function GET() {
       description: article.dek || '',
       date: new Date(article.publishedAt || article.createdAt),
       category: article.category ? [{ name: article.category.name }] : undefined,
-      author: article.author ? [{ name: article.author.name }] : undefined,
-      image: article.coverImage?.url
-        ? article.coverImage.url.startsWith('http')
-          ? article.coverImage.url
-          : `${BASE_URL}${article.coverImage.url}`
+      author: article.author
+        ? [{ name: article.author.name, email: 'helloignorami@gmail.com' }]
         : undefined,
     })
   }
