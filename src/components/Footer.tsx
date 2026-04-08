@@ -25,6 +25,9 @@ export function Footer() {
             >
               ☕ Buy Me a Coffee
             </Anchor>
+            <Anchor href="/feed.xml" className={styles.navLink}>
+              RSS
+            </Anchor>
           </Group>
           <Group gap="sm" justify="center">
             <Anchor

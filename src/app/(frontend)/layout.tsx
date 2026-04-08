@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ignorami.com'),
   alternates: {
     canonical: 'https://ignorami.com',
+    types: {
+      'application/rss+xml': 'https://ignorami.com/feed.xml',
+    },
   },
   openGraph: {
     title: 'Ignorami',
