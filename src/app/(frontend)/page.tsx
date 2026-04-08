@@ -38,15 +38,13 @@ export default async function HomePage() {
 
         {/* Short form sidebar */}
         {shortFormArticles.length > 0 && (
-          <Box component="aside" className={styles.sidebar}>
+          <Box component="aside">
             <Box className={styles.sidebarHeader}>
               <span className={styles.sidebarTitle}>Short Form</span>
             </Box>
-            <Box className={styles.sidebarArticles}>
-              {shortFormArticles.map((article) => (
-                <ShortFormCard key={article.id} article={article} />
-              ))}
-            </Box>
+            {shortFormArticles.map((article) => (
+              <ShortFormCard key={article.id} article={article} />
+            ))}
             <Link href="/short-form" className={styles.seeAll}>
               See All Short Form →
             </Link>

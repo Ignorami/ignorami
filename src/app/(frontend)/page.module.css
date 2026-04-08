@@ -28,12 +28,6 @@
 }
 
 /* Sidebar */
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-}
-
 .sidebarHeader {
   border-top: 2px solid var(--color-accent);
   padding-top: 0.75rem;
