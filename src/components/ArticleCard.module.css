@@ -10,6 +10,10 @@
   opacity: 0.85;
 }
 
+.featured {
+  border-top: 2px solid var(--color-accent);
+}
+
 .featured .title {
   font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
 }
