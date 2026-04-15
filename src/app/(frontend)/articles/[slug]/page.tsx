@@ -137,6 +137,10 @@ export async function generateMetadata({ params }: Props) {
     title: article.seo?.metaTitle || `${article.title} | Ignorami`,
     description: article.seo?.metaDescription || article.dek,
     openGraph: {
+      title: article.seo?.metaTitle || article.title,
+      description: article.seo?.metaDescription || article.dek,
+      url: `https://ignorami.com/articles/${slug}`,
+      type: 'article',
       images: article.seo?.ogImage?.url
         ? [article.seo.ogImage.url]
         : article.coverImage?.url
