@@ -1,7 +1,7 @@
 import { getPayloadClient } from './payload'
 import type { ResolvedArticle } from '@/types/resolved'
 
-const ARTICLES_PER_PAGE = 10
+const ARTICLES_PER_PAGE = 9
 
 export async function getArticles(page: number = 1) {
   const payload = await getPayloadClient()
