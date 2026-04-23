@@ -8,6 +8,7 @@ import type { ResolvedArticle } from '@/types/resolved'
 import styles from './page.module.css'
 import { ContentTypeBadge } from '@/components/ContentTypeBadge'
 import { ShareButtons } from '@/components/ShareButtons'
+import { getReadingTime } from '@/lib/readingTime'
 
 export const revalidate = 60
 
@@ -78,6 +79,9 @@ export default async function ArticlePage({ params }: Props) {
                 })}
               </Text>
             )}
+            <Text component="span" className={styles.metaItem}>
+              {getReadingTime(content)}
+            </Text>
           </Group>
         </Box>
 

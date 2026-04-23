@@ -4,6 +4,7 @@ import { Box, Text, Anchor, Group } from '@mantine/core'
 import styles from './ArticleCard.module.css'
 import type { ResolvedArticle } from '@/types/resolved'
 import { ContentTypeBadge } from './ContentTypeBadge'
+import { getReadingTime } from '@/lib/readingTime'
 
 type Props = {
   article: ResolvedArticle
@@ -56,6 +57,9 @@ export function ArticleCard({ article, featured = false }: Props) {
               })}
             </Text>
           )}
+          <Text component="span" className={styles.metaItem}>
+            {getReadingTime(article.content)}
+          </Text>
         </Group>
       </Box>
     </Box>
