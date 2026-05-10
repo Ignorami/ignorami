@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 0;
+  gap: 1.5rem;
+}
+
+.code {
+  font-family: var(--font-display) !important;
+  font-size: 8rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  color: var(--color-border) !important;
+  letter-spacing: -0.04em;
+}
+
+.title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1 !important;
+  margin: 0;
+}
+
+.message {
+  font-size: 1.05rem !important;
+  color: var(--color-muted) !important;
+  font-style: italic;
+  line-height: 1.7 !important;
+  max-width: 480px;
+}
+
+.link {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+  transition: opacity 0.15s ease;
+  margin-top: 1rem;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
