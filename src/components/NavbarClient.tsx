@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { Box, Container, Group, Text, Anchor, Burger } from '@mantine/core'
 import styles from './Navbar.module.css'
+import { RiSearchLine } from 'react-icons/ri'
 
 type Category = {
   id: number
@@ -117,6 +118,15 @@ export function NavbarClient({ categories }: Props) {
                 </Box>
               </Box>
             )}
+            <Anchor
+              component={Link}
+              href="/search"
+              className={styles.searchIcon}
+              aria-label="Search"
+              style={{ display: 'flex', alignItems: 'center', lineHeight: 1, marginBottom: 6 }}
+            >
+              <RiSearchLine size="0.9rem" />
+            </Anchor>
           </Group>
         </Box>
 
@@ -136,6 +146,14 @@ export function NavbarClient({ categories }: Props) {
               {cat.name}
             </Anchor>
           ))}
+          <Anchor
+            component={Link}
+            href="/search"
+            className={styles.mobileNavLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Search
+          </Anchor>
         </Box>
       </Container>
     </Box>

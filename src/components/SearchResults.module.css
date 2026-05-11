@@ -1,0 +1,27 @@
+.input {
+  margin-bottom: 2rem;
+}
+
+.status {
+  font-size: 1rem !important;
+  color: var(--color-muted) !important;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+.results {
+  margin-top: 0.5rem;
+}
+
+.count {
+  font-size: 0.75rem !important;
+  color: var(--color-muted) !important;
+  letter-spacing: 0.04em;
+  margin-bottom: 2rem !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}

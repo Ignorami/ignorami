@@ -239,3 +239,15 @@
   color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.05);
 }
+
+.searchIcon {
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s ease;
+}
+
+.searchIcon:hover {
+  color: #ffffff !important;
+}
