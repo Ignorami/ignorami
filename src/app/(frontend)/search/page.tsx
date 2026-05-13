@@ -18,7 +18,7 @@ export default async function SearchPage({ searchParams }: Props) {
     <Box className={styles.page}>
       <Container size={900} py="xl">
         <Box component="header" className={styles.header}>
-          <Text className={styles.eyebrow}>Search</Text>
+          {/* <Text className={styles.eyebrow}>Search</Text> */}
           <Text component="h1" className={styles.title}>
             {q ? `Results for "${q}"` : 'Search Ignorami'}
           </Text>
