@@ -1,4 +1,3 @@
-// src/components/Pagination.tsx
 import Link from 'next/link'
 import { Group } from '@mantine/core'
 import styles from './Pagination.module.css'
