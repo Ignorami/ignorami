@@ -19,8 +19,8 @@ export function ReadingProgressBar() {
   }, [])
 
   return (
-    <div className={styles.track}>
-      <div className={styles.bar} style={{ width: `${progress}%` }} />
+    <div className={styles.track} data-testid="progress-track">
+      <div className={styles.bar} style={{ width: `${progress}%` }} data-testid="progress-bar" />
     </div>
   )
 }
