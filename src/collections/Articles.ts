@@ -129,5 +129,15 @@ export const Articles: CollectionConfig = {
         },
       ],
     },
+    {
+      name: 'hidden',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description:
+          'Publish this article but hide it from the homepage, category pages, and search results.',
+        position: 'sidebar',
+      },
+    },
   ],
 }

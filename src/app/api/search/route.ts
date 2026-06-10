@@ -13,6 +13,7 @@ export async function GET(req: NextRequest) {
   const { docs } = await payload.find({
     collection: 'articles',
     where: {
+      hidden: { not_equals: true },
       and: [
         { status: { equals: 'published' } },
         {
