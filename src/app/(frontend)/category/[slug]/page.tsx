@@ -19,7 +19,7 @@ export default async function CategoryPage({ params }: Props) {
 
   const { docs: categories } = await payload.find({
     collection: 'categories',
-    where: { slug: { equals: slug } },
+    where: { slug: { equals: slug }, hidden: { not_equals: true } },
     limit: 1,
   })
 
@@ -31,6 +31,7 @@ export default async function CategoryPage({ params }: Props) {
     where: {
       status: { equals: 'published' },
       'category.slug': { equals: slug },
+      hidden: { not_equals: true },
     },
     sort: '-publishedAt',
     depth: 2,

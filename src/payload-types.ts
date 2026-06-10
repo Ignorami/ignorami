@@ -283,6 +283,10 @@ export interface Article {
     metaDescription?: string | null;
     ogImage?: (number | null) | Media;
   };
+  /**
+   * Publish this article but hide it from the homepage, category pages, and search results.
+   */
+  hidden?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -501,6 +505,7 @@ export interface ArticlesSelect<T extends boolean = true> {
         metaDescription?: T;
         ogImage?: T;
       };
+  hidden?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

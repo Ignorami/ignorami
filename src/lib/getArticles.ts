@@ -8,7 +8,11 @@ export async function getArticles(page: number = 1) {
 
   const { docs, totalDocs } = await payload.find({
     collection: 'articles',
-    where: { status: { equals: 'published' }, contentType: { equals: 'article' } },
+    where: {
+      status: { equals: 'published' },
+      contentType: { equals: 'article' },
+      hidden: { not_equals: true },
+    },
     sort: '-publishedAt',
     limit: ARTICLES_PER_PAGE,
     page,
@@ -29,6 +33,7 @@ export async function getFeaturedArticle() {
     where: {
       status: { equals: 'published' },
       featured: { equals: true },
+      hidden: { not_equals: true },
     },
     limit: 1,
     depth: 2,
@@ -45,6 +50,7 @@ export async function getShortFormArticles(limit: number = 5) {
     where: {
       status: { equals: 'published' },
       contentType: { equals: 'short-form' },
+      hidden: { not_equals: true },
     },
     sort: '-publishedAt',
     depth: 2,

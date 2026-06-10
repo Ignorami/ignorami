@@ -1,4 +1,3 @@
-// src/app/feed.xml/route.ts
 import { getPayloadClient } from '@/lib/payload'
 import { Feed } from 'feed'
 import type { ResolvedArticle } from '@/types/resolved'
@@ -10,7 +9,7 @@ export async function GET() {
 
   const { docs: articles } = await payload.find({
     collection: 'articles',
-    where: { status: { equals: 'published' } },
+    where: { status: { equals: 'published' }, hidden: { not_equals: true } },
     sort: '-publishedAt',
     limit: 20,
     depth: 2,
