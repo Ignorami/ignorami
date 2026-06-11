@@ -28,5 +28,14 @@ export const Categories: CollectionConfig = {
       name: 'description',
       type: 'textarea',
     },
+    {
+      name: 'hidden',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Hide this category from the navbar and category pages.',
+        position: 'sidebar',
+      },
+    },
   ],
 }

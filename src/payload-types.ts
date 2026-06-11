@@ -206,6 +206,10 @@ export interface Category {
    */
   slug: string;
   description?: string | null;
+  /**
+   * Hide this category from the navbar and category pages.
+   */
+  hidden?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -460,6 +464,7 @@ export interface CategoriesSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
   description?: T;
+  hidden?: T;
   updatedAt?: T;
   createdAt?: T;
 }
