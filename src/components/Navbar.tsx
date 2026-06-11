@@ -7,6 +7,9 @@ export async function Navbar() {
   const { docs: categories } = await payload.find({
     collection: 'categories',
     limit: 12,
+    where: {
+      or: [{ hidden: { equals: false } }, { hidden: { exists: false } }],
+    },
   })
 
   return (
