@@ -7,6 +7,7 @@ import './globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { theme } from '@/theme'
+import { ScrollToTop } from '@/components/ScrollToTop'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <MantineProvider theme={theme} forceColorScheme="light">
+          <ScrollToTop />
           <Navbar />
           <main>{children}</main>
           <Footer />
